@@ -1140,7 +1140,8 @@ data "aws_iam_policy_document" "aws_load_balancer_controller" {
 }
 
 module "aws_load_balancer_controller" {
-  source  = "aws-ia/eks-blueprints-addon/aws"
+  # source  = "aws-ia/eks-blueprints-addon/aws"
+  source  = "github.com/tsahiduek/eks-blueprints-addon"
   version = "1.1.0"
 
   provider = try(var.provider, null)
