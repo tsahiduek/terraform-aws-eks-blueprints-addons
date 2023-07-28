@@ -5,6 +5,7 @@
 resource "helm_release" "this" {
   for_each = var.helm_releases
 
+  provider         = try(each.value.provider, null)
   name             = try(each.value.name, each.key)
   description      = try(each.value.description, null)
   namespace        = try(each.value.namespace, null)

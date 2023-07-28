@@ -1143,7 +1143,8 @@ module "aws_load_balancer_controller" {
   source  = "aws-ia/eks-blueprints-addon/aws"
   version = "1.1.0"
 
-  create = var.enable_aws_load_balancer_controller
+  provider = try(var.provider, null)
+  create   = var.enable_aws_load_balancer_controller
 
   # https://github.com/aws/eks-charts/blob/master/stable/aws-load-balancer-controller/Chart.yaml
   name        = try(var.aws_load_balancer_controller.name, "aws-load-balancer-controller")
