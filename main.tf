@@ -1142,7 +1142,7 @@ data "aws_iam_policy_document" "aws_load_balancer_controller" {
 module "aws_load_balancer_controller" {
   # source  = "aws-ia/eks-blueprints-addon/aws"
   # version = "1.1.0"
-  source = "github.com/tsahiduek/eks-blueprints-addon"
+  source = "github.com/tsahiduek/terraform-aws-eks-blueprints-addon"
 
   provider = try(var.provider, null)
   create   = var.enable_aws_load_balancer_controller
